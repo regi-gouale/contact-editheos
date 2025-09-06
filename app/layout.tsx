@@ -31,6 +31,9 @@ export default function RootLayout({
       lang="fr"
       className={`*:not-sr-only {scroll-margin-top: 6rem} ${inter.variable} ${montserrat.variable}`}
     >
+      <head>
+        <link rel="icon" href="/logo-editheos.jpg" />
+      </head>
       <body className="font-sans antialiased">
         <Suspense fallback={<div>Chargement en cours...</div>}>
           {children}

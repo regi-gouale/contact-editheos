@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Inter, Montserrat, Space_Grotesk } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import { Suspense, type ReactNode } from "react";
 
 import "./globals.css";
@@ -13,18 +13,6 @@ const inter = Inter({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
   display: "swap",
 });
 

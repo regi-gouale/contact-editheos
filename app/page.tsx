@@ -33,13 +33,14 @@ export default function ContactPage() {
             className="text-4xl md:text-6xl text-zinc-950 mb-4 font-bold"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
-            L'édition qui inspire
+            L&apos;édition qui inspire
           </h1>
           <p
             className="text-xl text-muted-foreground"
             style={{ fontFamily: "var(--font-inter)" }}
           >
-            Promouvoir la foi, l’espoir et l’amour à travers l’écriture
+            Promouvoir la foi, l&apos;espoir et l&apos;amour à travers
+            l&apos;écriture
           </p>
         </div>
       </header>
@@ -58,7 +59,7 @@ export default function ContactPage() {
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Nous sommes là pour vous accompagner dans votre projet éditorial.
-              N'hésitez pas à nous contacter.
+              N&apos;hésitez pas à nous contacter.
             </p>
           </div>
 
@@ -234,7 +235,7 @@ export default function ContactPage() {
               className="text-secondary/80"
               style={{ fontFamily: "var(--font-inter)" }}
             >
-              La maison d'édition qui inspire.
+              La maison d&apos;édition qui inspire.
             </p>
           </div>
 

@@ -15,12 +15,12 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto">
           {/* Logo placeholder */}
           <div className="mb-8">
-            <div className="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center mb-6">
+            <div className="mx-auto rounded-2xl flex items-center justify-center mb-6">
               <Image
                 src="/logo-editheos.jpg"
                 alt="Editheos Logo"
-                width={128}
-                height={128}
+                width={256}
+                height={256}
                 className="rounded-2xl"
                 onClick={() => {
                   window.location.href = "https://editheos.fr";

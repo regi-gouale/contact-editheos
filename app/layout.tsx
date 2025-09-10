@@ -1,4 +1,5 @@
 import { SuspenseLoader } from "@/components/suspense-loader";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { Suspense, type ReactNode } from "react";
@@ -58,7 +59,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
-        <Suspense fallback={<SuspenseLoader />}>{children}</Suspense>
+        <Suspense fallback={<SuspenseLoader />}>
+          {children}
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   );

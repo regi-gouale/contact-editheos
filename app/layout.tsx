@@ -1,3 +1,4 @@
+import { SuspenseLoader } from "@/components/suspense-loader";
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { Suspense, type ReactNode } from "react";
@@ -33,11 +34,31 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/logo-editheos.jpg" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Editheos",
+              description:
+                "Maison d'édition chrétienne à Lyon qui inspire. Nous accompagnons les auteurs dans leurs projets éditoriaux.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Lyon",
+                addressCountry: "FR",
+              },
+              email: "contact@editheos.fr",
+              telephone: "+33661356810",
+              url: "https://contact.editheos.fr",
+              logo: "https://contact.editheos.fr/logo-editheos.jpeg",
+              image: "https://contact.editheos.fr/logo-editheos.jpeg",
+            }),
+          }}
+        />
       </head>
       <body className="font-sans antialiased">
-        <Suspense fallback={<div>Chargement en cours...</div>}>
-          {children}
-        </Suspense>
+        <Suspense fallback={<SuspenseLoader />}>{children}</Suspense>
       </body>
     </html>
   );

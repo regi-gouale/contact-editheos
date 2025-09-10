@@ -34,7 +34,7 @@ export default function RootLayout({
       className={`*:not-sr-only {scroll-margin-top: 6rem} ${inter.variable} ${montserrat.variable}`}
     >
       <head>
-        <link rel="icon" href="/logo-editheos.jpg" />
+        <link rel="icon" href="/logo-editheos.jpeg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -58,7 +58,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased">
+      <body className={`${inter.className} h-screen`}>
         <Suspense fallback={<SuspenseLoader />}>
           {children}
           <Analytics />

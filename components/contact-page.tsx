@@ -6,22 +6,23 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MessageCircle } from "lucide-react";
 import Image from "next/image";
+import { Label } from "./ui/label";
 
 export function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header Section */}
-      <header className="py-16 px-4 text-center">
+      <header className="m-2 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Logo placeholder */}
-          <div className="mb-8">
-            <div className="mx-auto rounded-2xl flex items-center justify-center mb-6">
+          <div className="">
+            <div className="mx-auto rounded-2xl flex items-center justify-center">
               <Image
                 src="/logo-editheos.jpeg"
                 alt="Editheos Logo"
                 width={256}
-                height={256}
-                className="rounded-2xl"
+                height={64}
+                className="rounded-2xl cursor-pointer"
                 onClick={() => {
                   window.location.href = "https://editheos.fr";
                 }}
@@ -30,13 +31,13 @@ export function ContactPage() {
           </div>
           {/* Slogan */}
           <h1
-            className="text-4xl md:text-6xl text-zinc-950 mb-4 font-bold"
+            className="text-3xl md:text-5xl text-zinc-950 mb-2 font-bold"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
             L&apos;édition qui inspire
           </h1>
           <p
-            className="text-xl text-muted-foreground"
+            className="text-lg text-muted-foreground"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             Promouvoir la foi, l&apos;espoir et l&apos;amour à travers
@@ -45,17 +46,17 @@ export function ContactPage() {
         </div>
       </header>
       {/* Contact Section */}
-      <main className="py-16 px-4">
+      <main className="py-6 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2
-              className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+              className="text-2xl md:text-3xl font-bold text-foreground mb-4"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
               Contactez-nous
             </h2>
             <p
-              className="text-lg text-muted-foreground max-w-2xl mx-auto"
+              className="text-md text-muted-foreground max-w-2xl mx-auto"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Nous sommes là pour vous accompagner dans votre projet éditorial.
@@ -66,74 +67,84 @@ export function ContactPage() {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Contact Information */}
             <div className="space-y-8">
-              <Card className="border-border">
-                <CardContent className="p-8">
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-accent-foreground" />
+              <Card
+                className="border-border cursor-pointer"
+                onClick={() => {
+                  window.location.href = "mailto:contact@editheos.fr";
+                }}
+              >
+                <CardContent className="m-2">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="size-12 bg-accent rounded-full flex items-center justify-center">
+                      <Mail className="size-6 text-accent-foreground" />
                     </div>
                     <div>
                       <h3
-                        className="text-xl font-semibold text-foreground"
+                        className="text-lg font-semibold text-foreground"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Email
                       </h3>
                       <p
-                        className="text-muted-foreground"
+                        className="text-muted-foreground text-md"
                         style={{ fontFamily: "var(--font-inter)" }}
                       >
                         Pour toute demande générale
                       </p>
                     </div>
                   </div>
-                  <a
-                    href="mailto:contact@editheos.fr"
-                    className="text-lg text-foreground hover:text-foreground/80 transition-colors"
+                  <Label
+                    // href="mailto:contact@editheos.fr"
+                    className="text-md text-foreground hover:text-foreground/80 transition-colors ml-16"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     contact@editheos.fr
-                  </a>
+                  </Label>
                 </CardContent>
               </Card>
 
-              <Card className="border-border">
-                <CardContent className="p-8">
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                      <MessageCircle className="w-6 h-6 text-accent-foreground" />
+              <Card
+                className="border-border cursor-pointer"
+                onClick={() => {
+                  window.open("https://wa.me/33661356810", "_blank");
+                }}
+              >
+                <CardContent className="m-2">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="size-12 bg-accent rounded-full flex items-center justify-center">
+                      <MessageCircle className="size-6 text-accent-foreground" />
                     </div>
                     <div>
                       <h3
-                        className="text-xl font-semibold text-foreground"
+                        className="text-lg font-semibold text-foreground"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        WhatsApp
+                        SMS / WhatsApp
                       </h3>
                       <p
-                        className="text-muted-foreground"
+                        className="text-muted-foreground text-md"
                         style={{ fontFamily: "var(--font-inter)" }}
                       >
                         Contact rapide et direct
                       </p>
                     </div>
                   </div>
-                  <a
-                    href="https://wa.me/33661356810"
-                    target="_blank"
+                  <Label
+                    // href="https://wa.me/33661356810"
+                    // target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg text-foreground hover:text-foreground/80 transition-colors text-left"
+                    className="text-md text-foreground hover:text-foreground/80 transition-colors text-left font-medium ml-16"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     +33 6 61 35 68 10
-                  </a>
+                  </Label>
                 </CardContent>
               </Card>
             </div>
 
             {/* Contact Form */}
             <Card className="border-border">
-              <CardContent className="p-8">
+              <CardContent className="m-2">
                 <h3
                   className="text-2xl font-bold text-foreground mb-6"
                   style={{ fontFamily: "var(--font-montserrat)" }}
@@ -143,13 +154,13 @@ export function ContactPage() {
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label
+                      <Label
                         htmlFor="firstName"
                         className="block text-sm font-medium text-foreground mb-2"
                         style={{ fontFamily: "var(--font-inter)" }}
                       >
                         Prénom
-                      </label>
+                      </Label>
                       <Input
                         id="firstName"
                         type="text"
@@ -158,13 +169,13 @@ export function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label
+                      <Label
                         htmlFor="lastName"
                         className="block text-sm font-medium text-foreground mb-2"
                         style={{ fontFamily: "var(--font-inter)" }}
                       >
                         Nom
-                      </label>
+                      </Label>
                       <Input
                         id="lastName"
                         type="text"
@@ -175,13 +186,13 @@ export function ContactPage() {
                   </div>
 
                   <div>
-                    <label
+                    <Label
                       htmlFor="email"
                       className="block text-sm font-medium text-foreground mb-2"
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       Email
-                    </label>
+                    </Label>
                     <Input
                       id="email"
                       type="email"
@@ -191,13 +202,13 @@ export function ContactPage() {
                   </div>
 
                   <div>
-                    <label
+                    <Label
                       htmlFor="message"
                       className="block text-sm font-medium text-foreground mb-2"
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       Message
-                    </label>
+                    </Label>
                     <Textarea
                       id="message"
                       rows={6}
@@ -209,7 +220,7 @@ export function ContactPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-black hover:bg-accent/90 text-white font-semibold py-3"
+                    className="w-full bg-black hover:bg-accent/90 text-white font-medium py-3"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
                     Envoyer le message
@@ -222,11 +233,11 @@ export function ContactPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-foreground text-primary-foreground py-12 px-4">
+      {/* <footer className="bg-foreground text-primary-foreground py-2 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-6">
+          <div className="mb-2">
             <h4
-              className="text-xl font-bold text-accent mb-2"
+              className="text-xl font-semibold text-accent mb-2"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
               Editheos
@@ -239,7 +250,7 @@ export function ContactPage() {
             </p>
           </div>
 
-          <div className="border-t border-accent/20 pt-6">
+          <div className="border-t border-accent/20 pt-2">
             <p
               className="text-sm text-secondary/60"
               style={{ fontFamily: "var(--font-inter)" }}
@@ -248,7 +259,7 @@ export function ContactPage() {
             </p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
